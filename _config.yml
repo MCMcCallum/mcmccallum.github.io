@@ -45,3 +45,5 @@ plugins:
 include:
   - "_img"
   - "_audio"
+
+github: [metadata]
