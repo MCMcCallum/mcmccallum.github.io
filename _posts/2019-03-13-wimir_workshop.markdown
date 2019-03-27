@@ -3,16 +3,14 @@ WiMIR Workshop 2018
 
 This year following the conference of the International Society of Music Information Retrieval, over 70 people attended the inaugural [WiMIR Workshop](https://wimir.wordpress.com/2018/10/30/wimir-workshop-2018-success/). It was a fantastic event to wrap up a week of non-stop music, math and machine learning. It was great to see a lot of familiar and unfamiliar faces with a wide variety of experience, and we were particularly impressed with the organisation. The day involved a quality poster session containing 18 posters from women researchers in the field, discussion groups over lunch, and workshop groups with enough time to have an in-depth, productive and insightful conversation.
 
-Benedikte Wallace, Gabriel Meseguer Brocal, Jan Van Balen, Karin Dressler, Matt McCallum, and Yun Ning Hung formed the group *“Building Collaborations Among Artists, Coders and Machine Learning”* led by Doug Eck. The focus of this workshop group was to explore building bridges between machine learning researchers, developers and artists by building communities and discussing the technical hurdles that must be overcome in constructing bridges between these different areas of expertise. These technical hurdles might include UX design, open source development practices, and meaningful research directions.
+Benedikte Wallace, Gabriel Meseguer Brocal, Jan Van Balen, Karin Dressler, Matt McCallum, and Yun Ning Hung formed the group *“Building Collaborations Among Artists, Coders and Machine Learning”* led by Douglas Eck. The focus of this workshop group was to explore building bridges between machine learning researchers, developers and artists by building communities and discussing the technical hurdles that must be overcome in constructing bridges between these different areas of expertise. These technical hurdles might include UX design, open source development practices, and meaningful research directions.
 
-<!--- TODO: Clear this image with Jan Van Balen--->
-
-![image(s) of WiMIR workshop]({{ "/_img/Image1.jpg" | relative_url }})
+<div style="text-align:center"><img src="{{ "/_img/Image1.jpg" | relative_url }}" alt="Image of WiMIR workshop"/></div>
 
 Building Bridges
 ===
 
-Everyone speaks a different language, some dialogs are very distinct, for example people that come from different geographical regions often do not understand a single word of each others' language. Even people who spend their day doing a different activity can speak a slightly different language, perhaps within the same industry. For example, one of the team was recently reading comments in code that was describing the functionality of a Fourier transform library&mdash;the code that separates audio into its constituent frequencies, i.e., the pitch and timbre we hear. The comments said that the input and output “may alias” or "may not alias”. To a digital signal processing engineer this might mean that the frequency content in the audio may or may not be above a given frequency referred to as Nyquist frequency, although, to a software developer this might mean that the input and output must be held in different memory locations. There is a wide variety of language differences within any given city, company or social group, and many connections/differences like these in between them. They often lead to misunderstandings, creativity, new perspectives and learning.
+Everyone speaks a different language. Some dialogs are very distinct, for example, people that come from different geographical regions often do not understand a single word of each others' language. Even people who spend their day doing a different activity can speak a slightly different language, perhaps within the same industry. For example, one of the team was recently reading comments in code that was describing the functionality of a Fourier transform library&mdash;the code that separates audio into its constituent frequencies, i.e., the pitch and timbre we hear. The comments said that the input and output “may alias” or "may not alias”. To a digital signal processing engineer this might mean that the frequency content in the audio may or may not be above a given frequency referred to as Nyquist frequency, although, to a software developer this might mean that the input and output must be held in different memory locations. There is a wide variety of language differences within any given city, company or social group, and many connections/differences like these in between them. They often lead to misunderstandings, creativity, new perspectives and learning.
 
     /* 
       Similar to pffft_transform, but makes sure that the output is
@@ -21,22 +19,28 @@ Everyone speaks a different language, some dialogs are very distinct, for exampl
       
       input and output may alias.
     */
-    void pffft_transform_ordered(PFFFT_Setup *setup, const float *input, float *output, float *work, pffft_direction_t direction);
+    void pffft_transform_ordered(PFFFT_Setup *setup, 
+                                 const float *input, 
+                                 float *output, 
+                                 float *work, 
+                                 pffft_direction_t direction);
 
-A recurring theme that came up in the group discussions was bridging the gap between various groups of people involved in modern music technology. One particularly interesting case is bridging the gap between consumers and creators in the music industry. What consumers do with music and what creators do with music has been quite distinct until recently. Consuming music has been very passive unlike music creation, and fans used to rarely catch a real life glimpse of the artists they respect and follow. With modern technology and machine learning, music experiences can become more interactive without requiring the skill that a professional musician might have developed. A given consumer may not know how to compose, or play an instrument but with machine assistance, they may be able to explore music interactively in ways they were unable to before. Several Magenta projects have already demonstrated this in some ways. For example [Piano Genie](https://magenta.tensorflow.org/pianogenie) showed that with little knowledge of music theory, people could play a piano with the aid of a machine. While [Latent Loops](https://magenta.tensorflow.org/composing-palettes) helped people create new melodies by combining pre-existing ones, without having to understand the rules of key or relative pitch.
+A recurring theme that came up in the group discussions was bridging the gap between various groups of people involved in modern music technology. One particularly interesting case is bridging the gap between consumers and creators in the music industry. What consumers do with music and what creators do with music has been quite distinct until recently. Consuming music has been very passive unlike music creation, and fans used to rarely catch a real life glimpse of the artists they respect and follow. With modern technology and machine learning, music experiences can become more interactive without requiring the skill that a professional musician might have developed. A given consumer may not know how to compose, or play an instrument but with machine assistance, they may be able to explore music interactively in ways they were unable to before. Several Magenta projects have already demonstrated this in some ways. For example [Piano Genie](https://g.co/magenta/pianogenie) showed that with little knowledge of music theory, people could play a piano with the aid of a machine. While [Latent Loops](https://magenta.tensorflow.org/composing-palettes) helped people create new melodies by combining pre-existing ones, without having to understand the rules of key or relative pitch.
 
-Artists and consumers have always had an important relationship. Personally, one of the most enjoyable or fulfilling components of music is the ability to empathise with the lyrics, mood, or overall narrative of a peice. Allowing consumers to interact with the art that an artist creates, in a way, brings them closer together and can make the experience even more personal. In addition to assisting in outreach to an artist’s fan base, these tools may be just as useful in the creative process, allowing artists to churn through ideas in quick succession for inspiration, automate parts of their workflow that they might find restrictive or laborious, or even as a past-time when they are not hard at work. 
+Artists and consumers have always had an important relationship. Personally, one of the most enjoyable or fulfilling components of music is the ability to empathise with the lyrics, mood, or overall narrative of a piece. Allowing consumers to interact with the art that an artist creates, in a way, brings them closer together and can make the experience even more personal. In addition to assisting in outreach to an artist’s fan base, these tools may be just as useful in the creative process, allowing artists to churn through ideas in quick succession for inspiration, automate parts of their workflow that they might find restrictive or laborious, or even as a past-time when they are not hard at work. 
 
 Artists who produce enough content may be able to train these models on their own data, or tailor them towards it. In a way, they could be influencing the machine that, in using it, may later influence them. The influences machines have had on the sound of music goes back centuries. As an example, in more recent times, the sound pioneered by the Fender Rhodes piano is still popular in modern music, despite being around since 1965. A major difference in modern times, enabled by machine learning, is that software can now be influenced by artists much more easily, i.e., by manipulating the data that it learns from. This is a much more fluent and bidirectional relationship than was possible previously.
 
-![Image of Rhodes keyboard]({{ "/_img/Image2.jpg" | relative_url }})
+<div style="text-align:center"><img src="{{ "/_img/Image2.jpg" | relative_url }}" alt="Image of Rhodes keyboard"/></div>
 
-<audio controls>
+<br/>
+<p style="display:block; margin:auto; text-align:center">Fender Rhodes recording from tim.kahn on <a href="https://freesound.org/people/tim.kahn/sounds/196006/#">FreeSound</a></p>
+<audio controls style="display:block; margin:auto; text-align:center">
   <source src="{{ "/_audio/Audio1.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
 </audio>
-<!-- **AUDIO: 1) Audio1.wav - Clip of Rhodes arpeggios** -->
+<br/>
 
-Using technology to enable better relationships between consumers and artists is a really interesting topic. The group’s theme however was not to build connections between consumers and artists, but to build connections between researchers, developers and artists. These are a few groups of people who typically speak very different technical languages. Although of course, there are a number of people who might fit into all three categories, often great engineers are not experienced musicians or vice versa, and they have a different understanding of potentially the same application. A developer may be concerned about a number of unforeseen technical issues that are required to make an application work, such as clock synchronization across multiple devices and the latency this might introduce in a real-time system such as a musical instrument. An artist may be concerned about the accessibility of a musical interface, and how this may enable a more fluent creative process. Finally, a researcher may be able to apply statistical models in novel ways that assists the two other groups, perhaps by creating novel sounds, or automatically generating melodies / accompaniments.
+Using technology to enable better relationships between consumers and artists is a really interesting topic. The group’s theme however was not to build connections between consumers and artists, but to build connections between researchers, developers and artists. These are groups of people who typically speak very different technical languages. Although of course, there are a number of people who might fit into all three categories, often great engineers are not experienced musicians or vice versa, and they have a different understanding of potentially the same application. A developer may be concerned about a number of unforeseen technical issues that are required to make an application work, such as clock synchronization across multiple devices and the latency this might introduce in a real-time system such as a musical instrument. An artist may be concerned about the accessibility of a musical interface, and how this may enable a more fluent creative process. Finally, a researcher may be able to apply statistical models in novel ways that assist the two other groups, perhaps by creating novel sounds, or automatically generating melodies / accompaniments.
 
 Despite these different perspectives, in the context of a project like Magenta, these groups of people share a common broad objective&mdash;to enable and enhance the creative process. Bringing together groups of people with such diverse skill sets, perspectives and understandings might increase the likelihood of novel and useful solutions, bringing ideas to the forefront that each of the groups might not have otherwise known is important or even possible. It’s pretty exciting, but people might have to work harder to learn each other’s perspectives or communicate their perspective more clearly.
 
@@ -50,7 +54,7 @@ Many of us in the WiMIR group were researchers and developers with several who a
 
 All things considered, we wanted to create something as a workshop group, and Magenta’s deep learning models and JavaScript interface made this possible in the limited time span we had. Several of us had seen a Google paper [“Onsets and Frames: Dual-Objective Piano Transcription”](https://ai.google/research/pubs/pub46812) earlier that week at the ISMIR conference, and it was clear this solved a difficult problem that is highly desirable to automate in a number of creative projects. It translates a piano performance into a MIDI representation, significantly simplifying the interface between a traditional instrument such as the piano and modern audio software. It was important that anything we created had a simple interface, and this research played a big part in achieving that. See how easy it is to use this to transcribe a piano recording to MIDI in your favorite digital audio workstation:
 
-![Example of recording audio and importing it into Ableton Live]({{ "/_img/Animation1.gif" | relative_url }})
+<div style="text-align:center"><img src="{{ "/_img/Animation1.gif" | relative_url }}" alt="Example of recording audio and importing it into Ableton Live"/></div>
 
 Another recurring theme that came up throughout the workshop discussion was how important it was not to limit an artist’s creativity. Despite maintaining a simple interface, we didn’t want to constrain the user's level of control. This is always a challenging balance in music technology. An easy way to add control, is to give people more knobs and buttons, but this increases complexity and, in a way, can take away control by interrupting an artist’s workflow, or perhaps it will require a lot more experience or training with the instrument or device to use it effectively. 
 
@@ -58,41 +62,61 @@ To expand on the “Onsets and Frames” Magenta application, and maintain a sim
 
 In the limited time span of the workshop, it seemed like a big task to create a useful Magenta application right from conceptualization. We were surprised with how far we could get however. Some of us were interested in looking into the Magenta API, while others were able to use the pre-existing applications created by Magenta, to create music directly. By the end of the workshop, all together we had collected a variety of sounds from around Paris (sirens, birds, cars, etc.), turned them into symbolic representations, and pieced them together in Ableton Live to create a unique sonic experience for a presentation. Here are a few samples that were gathered from Paris on the day:
 
+<div style="display: table; width: 100%; table-layout: fixed;">
+    
+  <span style="display: table-cell; text-align: center;">
+    <p style="display:block; margin:auto; text-align:center">Birds of Paris</p>
+    <audio controls style="display:block; margin:auto; text-align:center">
+      <source src="{{ "/_audio/Audio2_birds.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
+    </audio>
+  </span>
 
-<audio controls>
-  <source src="{{ "/_audio/Audio2_birds.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
-</audio>
-<!-- **AUDIO: 2) Audio2_birds.wav - Clip of birds sounds from Paris** -->
+  <span style="display: table-cell; text-align: center;">
+    <p style="display:block; margin:auto; text-align:center">Roadworks of Paris</p>
+    <audio controls style="display:block; margin:auto; text-align:center">
+      <source src="{{ "/_audio/Audio3_roadworks.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
+    </audio>
+  </span>
 
+</div>
 
-<audio controls>
-  <source src="{{ "/_audio/Audio3_roadworks.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
-</audio>
-<!-- **AUDIO: 3) Audio3_roadworks.wav - Clip of roadworks sounds from Paris** -->
+<br/>
 
+<div style="display: table; width: 100%; table-layout: fixed;">
 
-<audio controls>
-  <source src="{{ "/_audio/Audio4_sirens.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
-</audio>
-<!-- **AUDIO: 4) Audio4_sirens.wav - Clip of siren sounds from Paris** -->
+  <span style="display: table-cell; text-align: center;">
+    <p style="display:block; margin:auto; text-align:center">Sirens of Paris</p>
+    <audio controls style="display:block; margin:auto; text-align:center">
+      <source src="{{ "/_audio/Audio4_sirens.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
+    </audio>
+  </span>
 
+  <span style="display: table-cell; text-align: center;">
+    <p style="display:block; margin:auto; text-align:center">Trashcans of Paris</p>
+    <audio controls style="display:block; margin:auto; text-align:center">
+      <source src="{{ "/_audio/Audio5_trashcan.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
+    </audio>
+  </span>
 
-<audio controls>
-  <source src="{{ "/_audio/Audio5_trashcan.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
-</audio>
-<!-- **AUDIO: 5) Audio5_trashcan.wav - Clip of trashcan sounds from Paris** -->
+</div>
 
+<br/>
 
-<audio controls>
-  <source src="{{ "/_audio/Audio6_waterfountain.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
-</audio>
-<!-- **AUDIO: 6) Audio6_waterfountain.wav - Clip of water fountain sounds from Paris** -->
+<div style="display: table; width: 100%; table-layout: fixed;">
 
+  <span style="display: table-cell; text-align: center;">
+    <p style="display:block; margin:auto; text-align:center">Fountains of Paris</p>
+    <audio controls style="display:block; margin:auto; text-align:center">
+      <source src="{{ "/_audio/Audio6_waterfountain.mp3" | relative_url }}" type="audio/mpeg" preload="auto">
+    </audio>
+  </span>
+
+</div>
 
 Implementing a Web Application with Magenta
 ===
 
-During the workshop we were able to use Magneta tools to essentially create a melody that complemented sounds recorded from the real world. With the element of melody, all that remains is to combine it with the musical elements of rhythm and repetition and we would have something that is pretty undeniably music. This is where Magenta’s [MusicVAE](https://magenta.tensorflow.org/music-vae) comes in. 
+During the workshop we were able to use Magneta tools to essentially create a melody that complemented sounds recorded from the real world. With the element of melody, all that remains is to combine it with the musical elements of rhythm and repetition and we would have something that is pretty undeniably music. This is where Magenta’s [MusicVAE](https://g.co/magenta/music-vae) comes in. 
 
 The Magenta team have done a lot of work in encoding latent spaces using the methods of variational autoencoders. You might think of this type of system as consisting of an encoder and a decoder, that transforms audio to a latent space and back. Specifically, the encoder is a non-linear transformation from the space of piano roll style music representations, to an abstract latent space defining a high dimensional Gaussian distribution. The decoder performes a second nonlinear transform from points that are sampled from this Gaussian distribution, back to the space of piano roll style music representations.
 
@@ -100,7 +124,7 @@ The encoder and decoder could be one of many neural network architectures. In th
 
 A comparison between MusicVAE to a naïve random drum pattern generator can be seen in the figure below:
 
-![Comparison between stupid "dumb" drum machine and MusicVAE]({{ "/_img/Image3.png" | relative_url }})
+<div style="text-align:center"><img src="{{ "/_img/Image3.png" | relative_url }}" alt="Comparison between dumb drum machine and MusicVAE"/></div>
 
 We can see here that if we randomly select whether each sample is "on" or "off", we get very different behaviour than sampling from the MusicVAE model. It appears that MusicVAE prefers to put drum hits on even beats, or particularly, multiples of four, but it can still improvise outside of this behaviour. It also tends to put a lot of hits on the sample at index 5, the hi-hat. These are all musically typical behaviours. For the application in this blog post this is exactly what we need. A model that takes a random input and generates musically meaningful output. If done well this can provide a never ending source of drum patterns. Think of it as a session drummer with just one command, “Hey Bonham, mix it up”.
 
@@ -234,7 +258,7 @@ This loads a model trained by the Magenta team that generates two bar drum patte
 
 That’s it, we can go to this website, wait for it to load and see a new drum beat in a piano roll representation every time. Try it by typing `npm start` into the terminal from the `found-loops` directory. A web browser will open and you will see a loading screen followed by a drum pattern:
 
-![Example of loading a new drum pattern]({{ "/_img/Animation2.gif" | relative_url }})
+<div style="text-align:center"><img src="{{ "/_img/Animation2.gif" | relative_url }}" alt="Example of loading a new drum pattern"/></div>
 
 Refreshing the page to generate a new drum pattern is not the nicest user experience. We want to allow a user to cycle through drum patterns quickly, so that they may focus on other parts of their workflow without getting interrupted&mdash;to keep their creative juices flowing. A simple way to do this is to have a button that creates a new drum pattern for you. One click is probably simple enough not to distract an artist, and will allow them to maintain their focus elsewhere, e.g., on a guitar or keyboard. 
 
@@ -248,7 +272,7 @@ Thanks to the React framework, this is unbelievably simple to do. All we have to
             </div>
           ...
 
-![Example of continually generating drum patterns]({{"/_img/Animation3.gif" | relative_url }})
+<div style="text-align:center"><img src="{{"/_img/Animation3.gif" | relative_url }}" alt="Example of continually generating drum patterns"/></div>
 
 Let's just stop there for a second to appreciate what machine learning has done for us here. Usually to create an arbitrary new drum pattern in a digital audio workstation, an artist has a few options:
 
@@ -388,7 +412,7 @@ To stop, we only need to change the state that will be read at the end of the ne
 
 That's it, a complete neural drum machine in your web browser! If you are still running the npm server, and have saved these changes, go back and have a look at your web browser. It should be up to date and ready to roll. You can start the server again at any time by running `npm start` in the terminal from the `found-loops` directory.
 
-![Example of drum pattern playback]({{ "/_img/Animation4.gif" | relative_url }})
+<div style="text-align:center"><img src="{{ "/_img/Animation4.gif" | relative_url }}" alt="Example of drum pattern playback"/></div>
 
 Found Sound Loops
 ---
@@ -397,6 +421,6 @@ The complete `found-loops` application takes a little more development, and can 
 
 The complete codebase can be found [here](https://github.com/MCMcCallum/wimir2018). Altogether, the application provides the neural drumloop functionality built in the tutorial above in addition to the ability to record a two bar audio segment which is then translated into a piano roll representation via the Magenta [OnsetsAndFrames](https://tensorflow.github.io/magenta-js/music/classes/_transcription_model_.onsetsandframes.html) object. This allows a little more creative input than a simple button press, in a natural format&mdash;it's simply a recording of whatever the artist chooses. Artists could then export this into their favourite digital audio workstation to continue working on it as part of a larger piece.
 
-![Example of complete application in use]({{ "/_img/Animation5.gif" | relative_url }})
+<div style="text-align:center"><img src="{{ "/_img/Animation5.gif" | relative_url }}" alt="Example of complete application in use"/></div>
 
-It's clear that with tools like this that are provided from the machine learning engineer or scientist to the web developer, and from the web developer to the musician through simple interfaces (be it a JavaScript API or a webpage), modern technology is enabling these groups of people to work together closely, and more naturally than before. If these interfaces are simple enough, it's not too much of a leap for a musician to start building musical web applications, or for a developer to make music. Thanks to machine learning research into artforms such as music, researchers, developers and musicians can each create their own sound and exchange ideas through the medium of the art itself&mdash;audio.
+It's clear that with tools like this that are provided from the machine learning engineer or scientist to the web developer, and from the web developer to the musician through simple interfaces (be it a JavaScript API or a webpage), modern technology is enabling these groups of people to work together closely, and more naturally than before. If these interfaces are simple enough, it's not too much of a leap for a musician to start building musical web applications, or for a developer to make music. Thanks to machine learning research into artforms such as music; researchers, developers and musicians can each create their own sound and exchange ideas through the medium of the art itself&mdash;audio.
