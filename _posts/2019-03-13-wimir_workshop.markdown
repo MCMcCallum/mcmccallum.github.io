@@ -3,7 +3,7 @@ WiMIR Workshop 2018
 
 This year following the conference of the International Society of Music Information Retrieval, over 70 people attended the inaugural [WiMIR Workshop](https://wimir.wordpress.com/2018/10/30/wimir-workshop-2018-success/). It was a fantastic event to wrap up a week of non-stop music, math and machine learning. It was great to see a lot of familiar and unfamiliar faces with a wide variety of experience, and we were particularly impressed with the organisation. The day involved a quality poster session containing 18 posters from women researchers in the field, discussion groups over lunch, and workshop groups with enough time to have an in-depth, productive and insightful conversation.
 
-Benedikte Wallace, [Gabriel Meseguer-Brocal](https://twitter.com/gabolsgabs), Jan Van Balen, [Karin Dressler](https://twitter.com/karin_dressler), [Matt McCallum](http://www.mattcmccallum.com), and [Amy Hung](https://biboamy.github.io) formed the group *“Building Collaborations Among Artists, Coders and Machine Learning”* led by [Douglas Eck](https://twitter.com/douglas_eck). The focus of this workshop group was to explore building bridges between machine learning researchers, developers and artists by building communities and discussing the technical hurdles that must be overcome in constructing bridges between these different areas of expertise. These technical hurdles might include UX design, open source development practices, and meaningful research directions.
+[Benedikte Wallace](https://www.hf.uio.no/ritmo/english/people/phd-fellows/benediwa/index.html), [Gabriel Meseguer-Brocal](https://twitter.com/gabolsgabs), Jan Van Balen, [Karin Dressler](https://twitter.com/karin_dressler), [Matt McCallum](http://www.mattcmccallum.com), and [Amy Hung](https://biboamy.github.io) formed the group *“Building Collaborations Among Artists, Coders and Machine Learning”* led by [Douglas Eck](https://twitter.com/douglas_eck). The focus of this workshop group was to explore building bridges between machine learning researchers, developers and artists by building communities and discussing the technical hurdles that must be overcome in constructing bridges between these different areas of expertise. These technical hurdles might include UX design, open source development practices, and meaningful research directions.
 
 <div style="text-align:center"><img src="{{ "/_img/Image1.jpg" | relative_url }}" alt="Image of WiMIR workshop"/></div>
 
@@ -212,7 +212,7 @@ The first and simplest step to get a working Magenta web application is to load 
           this.vae_model.sample(1)
             .then((samples) => {
             var drum_samples = samples[0];
-            var viz_vae = new mm.Visualizer(drum_samples, document.getElementById('vaecanvas'), this.config_beat);
+            var viz_vae = new mm.PianoRollCanvasVisualizer(drum_samples, document.getElementById('vaecanvas'), this.config_beat);
             })
             .then(() => resolve());
         });
@@ -298,7 +298,7 @@ Without building a sophisticated audio engine in the browser, the Magenta team h
         this.vae_model.sample(1)
           .then((samples) => {
             this.drum_samples = samples[0];
-            var viz_vae = new mm.Visualizer(this.drum_samples, document.getElementById('vaecanvas'), this.config_beat);
+            var viz_vae = new mm.PianoRollCanvasVisualizer(this.drum_samples, document.getElementById('vaecanvas'), this.config_beat);
             this.viz_player_vae = new mm.Player(false, {
               run: (note) => viz_vae.redraw(note),
               stop: () => {
